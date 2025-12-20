@@ -1,3 +1,4 @@
+
 import { defineQuery } from "next-sanity";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { urlFor } from "@/sanity/lib/image";
