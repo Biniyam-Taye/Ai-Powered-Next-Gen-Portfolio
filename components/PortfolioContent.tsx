@@ -18,7 +18,7 @@ async function PortfolioContent() {
     <>
       <HeroSection />
       <AboutSection />
-      <TestimonialsSection /> // This now correctly calls the fixed component chain
+      {/* <TestimonialsSection /> */}
       <SkillsSection />
       <ExperienceSection />
       <EducationSection />
@@ -26,7 +26,7 @@ async function PortfolioContent() {
       <CertificationsSection />
       <AchievementsSection />
       <ServicesSection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <ContactSection />
     </>
   );

@@ -37,7 +37,7 @@ export async function BlogSection() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Latest Blog Posts
+            My Latest Blog Posts
           </h2>
           <p className="text-xl text-muted-foreground">
             Thoughts, tutorials, and insights

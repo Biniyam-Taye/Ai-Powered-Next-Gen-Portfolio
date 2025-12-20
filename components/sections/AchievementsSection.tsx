@@ -52,13 +52,13 @@ export async function AchievementsSection() {
   const getTypeLabel = (type: string | null | undefined) => {
     if (!type) return "Achievement";
     const labels: Record<string, string> = {
-      award: "Award",
-      hackathon: "Hackathon Win",
-      publication: "Publication",
-      speaking: "Speaking",
-      "open-source": "Open Source",
-      milestone: "Milestone",
-      recognition: "Recognition",
+      award: "API Engineering",
+      hackathon: "Full-Stack Engineering",
+      publication: "Dashboard Engineering",
+      speaking: "Payment Engineering",
+      "open-source": "AI Integration",
+      milestone: "Developer Mindset",
+      recognition: "Frontend Expertise",
       other: "Other",
     };
     return labels[type] || "Achievement";
@@ -73,10 +73,11 @@ export async function AchievementsSection() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Achievements & Awards
+            Engineering Achievements
           </h2>
           <p className="text-xl text-muted-foreground">
-            Milestones and recognitions
+            Real-world solutions across frontend, backend, and AI-powered
+            systems.
           </p>
         </div>
 
@@ -85,7 +86,7 @@ export async function AchievementsSection() {
           <div className="mb-12">
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
               <IconStar className="w-6 h-6 text-yellow-500 fill-yellow-500" />
-              Featured Achievements
+              Technical depth
             </h3>
             <div className="@container">
               <div className="grid grid-cols-1 @3xl:grid-cols-2 gap-6">
@@ -161,7 +162,7 @@ export async function AchievementsSection() {
         {regular.length > 0 && (
           <div>
             {featured.length > 0 && (
-              <h3 className="text-2xl font-bold mb-6">All Achievements</h3>
+              <h3 className="text-2xl font-bold mb-6">Core Principles</h3>
             )}
             <div className="@container">
               <div className="grid grid-cols-1 @2xl:grid-cols-2 @5xl:grid-cols-3 gap-6">
