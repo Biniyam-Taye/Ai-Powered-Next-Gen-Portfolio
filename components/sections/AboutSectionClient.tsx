@@ -7,17 +7,17 @@ import { cn } from "@/lib/utils";
 import { Mail, MapPin, Code2, Rocket, Brain, Award, Star, Zap } from "lucide-react";
 
 interface Stat {
-    label: string;
-    value: string;
+    label?: string | null;
+    value?: string | null;
 }
 
 interface Profile {
     fullBio: any;
     stats?: Stat[] | null;
-    email?: string;
-    location?: string;
-    firstName?: string;
-    lastName?: string;
+    email?: string | null;
+    location?: string | null;
+    firstName?: string | null;
+    lastName?: string | null;
 }
 
 interface AboutSectionClientProps {

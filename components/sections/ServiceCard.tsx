@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 interface Service {
     title?: string | null;
-    slug?: { current: string } | null;
+    slug?: { current?: string | null } | null;
     icon?: any;
     shortDescription?: string | null;
     fullDescription?: any;

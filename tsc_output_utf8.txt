@@ -1,0 +1,34 @@
+﻿components/sections/AboutSection.tsx(23,30): error TS2322: Type '{ firstName: null; lastName: null; fullBio: null; yearsOfExperience: null; stats: null; email: null; phone: null; location: null; } | { firstName: null; lastName: null; fullBio: null; yearsOfExperience: number | null; stats: null; email: null; phone: null; location: null; } | { ...; } | { ...; } | { ...; }' is not assignable to type 'Profile'.
+  Type '{ firstName: string | null; lastName: string | null; fullBio: { children?: { marks?: string[] | undefined; text?: string | undefined; _type: "span"; _key: string; }[] | undefined; style?: "blockquote" | ... 7 more ... | undefined; ... 4 more ...; _key: string; }[] | null; ... 4 more ...; location: string | null; }' is not assignable to type 'Profile'.
+    Types of property 'stats' are incompatible.
+      Type '{ label?: string | undefined; value?: string | undefined; _key: string; }[] | null' is not assignable to type 'Stat[] | null | undefined'.
+        Type '{ label?: string | undefined; value?: string | undefined; _key: string; }[]' is not assignable to type 'Stat[]'.
+          Type '{ label?: string | undefined; value?: string | undefined; _key: string; }' is not assignable to type 'Stat'.
+            Types of property 'label' are incompatible.
+              Type 'string | undefined' is not assignable to type 'string'.
+                Type 'undefined' is not assignable to type 'string'.
+components/sections/ServicesSection.tsx(70,32): error TS2322: Type '{ title: string | null; slug: Slug | null; icon: { asset?: { _ref: string; _type: "reference"; _weak?: boolean | undefined; [internalGroqTypeReferenceTo]?: "sanity.imageAsset" | undefined; } | undefined; media?: unknown; hotspot?: SanityImageHotspot | undefined; crop?: SanityImageCrop | undefined; _type: "image"; } ...' is not assignable to type 'Service'.
+  Types of property 'slug' are incompatible.
+    Type 'Slug | null' is not assignable to type '{ current: string; } | null | undefined'.
+      Type 'Slug' is not assignable to type '{ current: string; }'.
+        Types of property 'current' are incompatible.
+          Type 'string | undefined' is not assignable to type 'string'.
+            Type 'undefined' is not assignable to type 'string'.
+components/sections/ServicesSection.tsx(89,32): error TS2322: Type '{ title: string | null; slug: Slug | null; icon: { asset?: { _ref: string; _type: "reference"; _weak?: boolean | undefined; [internalGroqTypeReferenceTo]?: "sanity.imageAsset" | undefined; } | undefined; media?: unknown; hotspot?: SanityImageHotspot | undefined; crop?: SanityImageCrop | undefined; _type: "image"; } ...' is not assignable to type 'Service'.
+  Types of property 'slug' are incompatible.
+    Type 'Slug | null' is not assignable to type '{ current: string; } | null | undefined'.
+      Type 'Slug' is not assignable to type '{ current: string; }'.
+        Types of property 'current' are incompatible.
+          Type 'string | undefined' is not assignable to type 'string'.
+            Type 'undefined' is not assignable to type 'string'.
+components/ui/chart.tsx(110,3): error TS2339: Property 'payload' does not exist on type 'Omit<Props<ValueType, NameType>, PropertiesReadFromContext> & { active?: boolean | undefined; allowEscapeViewBox?: AllowInDimension | undefined; ... 17 more ...; wrapperStyle?: CSSProperties | undefined; } & ClassAttributes<...> & HTMLAttributes<...> & { ...; }'.
+components/ui/chart.tsx(115,3): error TS2339: Property 'label' does not exist on type 'Omit<Props<ValueType, NameType>, PropertiesReadFromContext> & { active?: boolean | undefined; allowEscapeViewBox?: AllowInDimension | undefined; ... 17 more ...; wrapperStyle?: CSSProperties | undefined; } & ClassAttributes<...> & HTMLAttributes<...> & { ...; }'.
+components/ui/chart.tsx(184,20): error TS7006: Parameter 'item' implicitly has an 'any' type.
+components/ui/chart.tsx(185,17): error TS7006: Parameter 'item' implicitly has an 'any' type.
+components/ui/chart.tsx(185,23): error TS7006: Parameter 'index' implicitly has an 'any' type.
+components/ui/chart.tsx(263,39): error TS2344: Type '"verticalAlign" | "payload"' does not satisfy the constraint '"string" | "type" | "name" | "to" | "media" | "filter" | "fill" | "values" | "children" | "path" | "order" | "min" | "max" | "style" | "clipPath" | "mask" | "layout" | "href" | "color" | ... 427 more ... | "onBBoxUpdate"'.
+  Type '"payload"' is not assignable to type '"string" | "type" | "name" | "to" | "media" | "filter" | "fill" | "values" | "children" | "path" | "order" | "min" | "max" | "style" | "clipPath" | "mask" | "layout" | "href" | "color" | ... 427 more ... | "onBBoxUpdate"'.
+components/ui/chart.tsx(269,17): error TS2339: Property 'length' does not exist on type '{}'.
+components/ui/chart.tsx(282,10): error TS2339: Property 'filter' does not exist on type '{}'.
+components/ui/chart.tsx(282,18): error TS7006: Parameter 'item' implicitly has an 'any' type.
+components/ui/chart.tsx(283,15): error TS7006: Parameter 'item' implicitly has an 'any' type.
