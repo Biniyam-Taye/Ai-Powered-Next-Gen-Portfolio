@@ -3,7 +3,7 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { ProjectsSectionClient } from "./ProjectsSectionClient";
 
 const PROJECTS_QUERY =
-  defineQuery(`*[_type == "project" && featured == true] | order(order asc)[0...6]{
+  defineQuery(`*[_type == "project" && featured == true] | order(order asc){
   title,
   slug,
   tagline,

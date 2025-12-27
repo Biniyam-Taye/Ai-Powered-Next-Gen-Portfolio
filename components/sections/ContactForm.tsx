@@ -23,7 +23,7 @@ export function ContactForm() {
       if (result.success) {
         setStatus({
           type: "success",
-          message: "Thank you! Your message has been sent successfully.",
+          message: result.message || "Thank you! Your message has been sent successfully.",
         });
         (e.target as HTMLFormElement).reset();
         setTimeout(() => {
