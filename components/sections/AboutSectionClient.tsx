@@ -13,7 +13,7 @@ interface Stat {
 
 interface Profile {
     fullBio: any;
-    stats: Stat[];
+    stats?: Stat[] | null;
     email?: string;
     location?: string;
     firstName?: string;
