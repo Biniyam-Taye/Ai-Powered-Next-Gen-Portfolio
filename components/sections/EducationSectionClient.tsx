@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import { cn } from "@/lib/utils";
-import { IconAward, IconCalendar, IconExternalLink, IconSchool } from "@tabler/icons-react";
+import { IconAward, IconCalendar, IconExternalLink, IconSchool, IconBook, IconClock, IconActivity, IconBolt, IconCode, IconCpu, IconCertificate } from "@tabler/icons-react";
 
 // --- Types ---
 
@@ -163,19 +163,128 @@ function LayeredCard({ edu, index }: { edu: Education; index: number }) {
 
 export function EducationSectionClient({ education }: EducationSectionClientProps) {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 md:gap-14 px-4">
-            {education.map((edu, index) => (
-                <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="h-full"
-                >
-                    <LayeredCard edu={edu} index={index} />
+        <div className="group/wrapper relative perspective-1000 py-12 px-4">
+            {/* Massive Glow Field */}
+            <div className="absolute -inset-10 rounded-[4rem] bg-gradient-to-br from-slate-200/10 via-zinc-100/10 to-transparent opacity-0 group-hover/wrapper:opacity-100 blur-[100px] transition-all duration-1000 pointer-events-none" />
+
+            {/* Main Wrapper Card */}
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className={cn(
+                    "relative rounded-[3rem] p-8 md:p-12 lg:p-16",
+                    // DEFAULT (Light Mode): Silver/White
+                    "bg-gradient-to-br from-slate-50/98 via-white to-zinc-50/98",
+                    // DARK MODE: Deep Black/Zinc
+                    "dark:from-zinc-950 dark:via-black dark:to-zinc-900",
+                    "backdrop-blur-3xl border-4",
+                    // DEFAULT Border: Slate-200
+                    "border-slate-200/80",
+                    // DARK Border: Zinc-800
+                    "dark:border-zinc-800/80",
+                    // Shadow handling
+                    "shadow-[0_40px_100px_rgba(0,0,0,0.12)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.5)]",
+                    // Hover states
+                    "group-hover/wrapper:border-slate-300 dark:group-hover/wrapper:border-zinc-700 group-hover/wrapper:-translate-y-3",
+                    "overflow-hidden transition-all duration-1000 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
+                )}
+            >
+                {/* --- TOTAL DECORATION "STUFFES" LAYER --- */}
+
+                {/* 1. Technical Background Elements */}
+                <div className="absolute inset-0 opacity-[0.06] dark:opacity-[0.15] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1.5px, transparent 0)', backgroundSize: '40px 40px' }} />
+
+                {/* NEW: Bold Movable Grid Pattern on Hover */}
+                <div className="absolute inset-0 opacity-0 group-hover/wrapper:opacity-[0.15] transition-opacity duration-700 pointer-events-none animate-[grid-move_3s_linear_infinite]"
+                    style={{
+                        backgroundImage: `linear-gradient(to right, #333 2px, transparent 2px), linear-gradient(to bottom, #333 2px, transparent 2px)`,
+                        backgroundSize: '40px 40px'
+                    }}
+                />
+
+                <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-slate-200/20 to-transparent dark:from-blue-500/5" />
+
+                {/* 2. Scanning Laser Effect */}
+                <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-blue-400/30 to-transparent blur-sm animate-[scan_6s_infinite] pointer-events-none z-0" />
+
+                {/* 5. Center Background Spinning Tech (Massive) */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] dark:opacity-[0.1] pointer-events-none scale-150">
+                    <div className="w-[1000px] h-[1000px] border-[1px] border-slate-900 dark:border-white rounded-full animate-spin-slow rotate-45" />
+                    <div className="absolute w-[800px] h-[800px] border border-dashed border-slate-900 dark:border-zinc-400 rounded-full animate-reverse-spin" />
+                </div>
+
+                {/* 6. Floating Tech Artifacts */}
+                <motion.div animate={{ y: [0, -30, 0], rotate: [0, 5, 0] }} transition={{ duration: 6, repeat: Infinity }} className="absolute bottom-1/3 left-[15%] p-5 bg-white/80 dark:bg-zinc-900/80 border border-slate-200 dark:border-zinc-700 rounded-[2rem] shadow-2xl opacity-0 group-hover/wrapper:opacity-100 transition-opacity hidden lg:block">
+                    <IconCertificate className="w-8 h-8 text-slate-800 dark:text-zinc-100" />
+                    <div className="mt-2 text-[8px] font-bold uppercase overflow-hidden whitespace-nowrap dark:text-zinc-300"><span className="inline-block animate-marquee italic">degree_verified.sig</span></div>
                 </motion.div>
-            ))}
+
+                <div className="absolute top-1/3 right-[15%] hidden lg:block z-0">
+                    <div className="absolute w-64 h-64 bg-primary/20 rounded-full blur-[100px] animate-pulse" />
+                </div>
+
+                {/* 7. Top Center Status Bar */}
+                <div className="absolute top-8 left-1/2 -translate-x-1/2 flex items-center gap-10 opacity-40 hidden sm:flex">
+                    <div className="flex items-center gap-2 dark:text-zinc-400"><IconCode className="w-4 h-4" /><span className="text-[10px] font-mono">01000101_01000100_01010101</span></div>
+                    <div className="w-px h-6 bg-slate-300 dark:bg-zinc-700" />
+                    <div className="flex items-center gap-2 uppercase font-black text-[10px] dark:text-zinc-300"><IconCpu className="w-4 h-4 text-blue-500 animate-pulse" /><span>Processing_Knowledge</span></div>
+                </div>
+
+                {/* Content: The Grid */}
+                <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 md:gap-14">
+                    {education.map((edu, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="h-full"
+                        >
+                            <LayeredCard edu={edu} index={index} />
+                        </motion.div>
+                    ))}
+                </div>
+
+                <div className="absolute top-0 left-[-100%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-[-25deg] animate-shimmer opacity-0 group-hover/wrapper:opacity-100 pointer-events-none" />
+            </motion.div>
+
+            <style jsx global>{`
+                @keyframes scan {
+                    0% { top: 0%; opacity: 0; }
+                    10% { opacity: 1; }
+                    90% { opacity: 1; }
+                    100% { top: 100%; opacity: 0; }
+                }
+                @keyframes marquee {
+                    0% { transform: translateX(100%); }
+                    100% { transform: translateX(-100%); }
+                }
+                 .animate-spin-slow {
+                    animation: spin 15s linear infinite;
+                 }
+                .animate-reverse-spin {
+                    animation: spin 20s linear infinite reverse;
+                 }
+                 @keyframes spin {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                 }
+                 .animate-shimmer {
+                    animation: shimmer 2s infinite;
+                 }
+                 @keyframes shimmer {
+                    100% {
+                        left: 200%;
+                    }
+                 }
+                 @keyframes grid-move {
+                    0% { background-position: 0 0; }
+                    100% { background-position: 40px 40px; }
+                 }
+            `}</style>
         </div>
     );
 }

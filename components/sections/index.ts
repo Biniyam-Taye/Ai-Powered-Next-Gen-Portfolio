@@ -11,3 +11,5 @@ export { ProjectsSection } from "./ProjectsSection";
 export { ServicesSection } from "./ServicesSection";
 export { SkillsSection } from "./SkillsSection";
 export { TestimonialsSection } from "./TestimonialsSection";
+
+export { DownloadCVSection } from "./DownloadCVSection";

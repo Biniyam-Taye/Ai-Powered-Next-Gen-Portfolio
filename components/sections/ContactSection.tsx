@@ -4,6 +4,7 @@ import WorldMapDemo from "@/components/world-map-demo";
 import { sanityFetch } from "@/sanity/lib/live";
 import { ContactForm } from "./ContactForm";
 import { ContactInfoCard } from "./ContactInfoCard";
+import { LocationCard } from "./LocationCard";
 
 const PROFILE_QUERY = defineQuery(`*[_id == "singleton-profile"][0]{
   email,
@@ -85,11 +86,10 @@ export async function ContactSection() {
                 )}
 
                 {profile.location && (
-                  <ContactInfoCard
-                    icon="map-pin"
-                    label="Location"
+                  <LocationCard
                     value={profile.location}
                     gradient="from-emerald-500 to-teal-600"
+                    mapQuery="Arba Minch, Ethiopia"
                   />
                 )}
               </div>
@@ -114,10 +114,10 @@ export async function ContactSection() {
                       className="group relative"
                     >
                       <div className={`absolute -inset-0.5 bg-gradient-to-r ${platform.icon === 'github' ? 'from-gray-600 to-gray-800' :
-                          platform.icon === 'linkedin' ? 'from-blue-600 to-blue-800' :
-                            platform.icon === 'twitter' ? 'from-sky-500 to-blue-600' :
-                              platform.icon === 'globe' ? 'from-emerald-500 to-teal-600' :
-                                'from-red-600 to-red-800'
+                        platform.icon === 'linkedin' ? 'from-blue-600 to-blue-800' :
+                          platform.icon === 'twitter' ? 'from-sky-500 to-blue-600' :
+                            platform.icon === 'globe' ? 'from-emerald-500 to-teal-600' :
+                              'from-red-600 to-red-800'
                         } rounded-xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-300`} />
                       <div className="relative px-5 py-2.5 bg-card border-2 border-border/50 rounded-xl font-semibold text-sm transition-all duration-300 group-hover:border-transparent group-hover:scale-105">
                         {platform.name}

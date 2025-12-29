@@ -34,8 +34,8 @@ export async function ExperienceSection() {
 
       <div className="container mx-auto max-w-5xl relative z-10">
         <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/50">
-            Work Experience
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Experience</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             My professional journey and the impact I've delivered along the way.
