@@ -96,7 +96,7 @@ const CertificateCard = ({ cert, isActive }: { cert: Certification, isActive: bo
                     </div>
 
                     {/* Name & Issuer */}
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight line-clamp-2">
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2 leading-tight">
                         {cert.name}
                     </h3>
                     <p className="text-sm text-zinc-400 mb-4">{cert.issuer}</p>
@@ -124,11 +124,11 @@ const CertificateCard = ({ cert, isActive }: { cert: Certification, isActive: bo
                         <p className="text-[10px] text-zinc-400 mb-3">
                             Issued: {cert.issueDate ? formatDate(cert.issueDate) : 'N/A'}
                         </p>
-                        {cert.credentialUrl && (
+                        {(cert.credentialUrl || cert.name?.includes("Gig-101")) && (
                             <Link
-                                href={cert.credentialUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href={cert.credentialUrl || "/certificates/gig101"}
+                                target={cert.credentialUrl ? "_blank" : undefined}
+                                rel={cert.credentialUrl ? "noopener noreferrer" : undefined}
                                 className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-500 hover:to-yellow-600 text-black text-xs font-bold uppercase tracking-wider rounded-sm transition-all shadow-lg hover:shadow-yellow-500/20 pointer-events-auto"
                             >
                                 Verify ID <IconExternalLink className="w-3 h-3" />
@@ -336,10 +336,10 @@ export function CertificationsSectionClient({ certifications }: CertificationsSe
                     </div>
 
                     {/* 10. Navigation: Deep Glassmorphism */}
-                    <div className="flex items-center gap-10 z-40 bg-white/60 dark:bg-black/60 backdrop-blur-3xl px-12 py-8 rounded-[3rem] border border-slate-200 dark:border-zinc-800 shadow-2xl hover:border-blue-300 hover:shadow-blue-200/40 transition-all duration-500 group/controls">
-                        <button onClick={prev} className="p-5 rounded-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-800 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-110 active:scale-95 shadow-lg transition-all"><ChevronLeft className="w-10 h-10" /></button>
-                        <div className="flex gap-5">{certifications.map((_, i) => (<button key={i} onClick={() => setCurrIndex(i)} className={cn("h-4 rounded-full transition-all duration-700", currIndex === i ? "bg-slate-900 dark:bg-white w-20" : "bg-slate-200 dark:bg-zinc-800 w-4 hover:bg-slate-400 dark:hover:bg-zinc-600")} />))}</div>
-                        <button onClick={next} className="p-5 rounded-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-800 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-110 active:scale-95 shadow-lg transition-all"><ChevronRight className="w-10 h-10" /></button>
+                    <div className="flex items-center gap-4 z-40 bg-white/60 dark:bg-black/60 backdrop-blur-3xl px-6 py-3 rounded-full border border-slate-200 dark:border-zinc-800 shadow-xl hover:border-blue-300 hover:shadow-blue-200/20 transition-all duration-500 group/controls">
+                        <button onClick={prev} className="p-2 rounded-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-800 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-110 active:scale-95 shadow transition-all"><ChevronLeft className="w-5 h-5" /></button>
+                        <div className="flex gap-2">{certifications.map((_, i) => (<button key={i} onClick={() => setCurrIndex(i)} className={cn("h-1.5 rounded-full transition-all duration-700", currIndex === i ? "bg-slate-900 dark:bg-white w-8" : "bg-slate-200 dark:bg-zinc-800 w-1.5 hover:bg-slate-400 dark:hover:bg-zinc-600")} />))}</div>
+                        <button onClick={next} className="p-2 rounded-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-800 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-110 active:scale-95 shadow transition-all"><ChevronRight className="w-5 h-5" /></button>
                     </div>
                 </div>
 
