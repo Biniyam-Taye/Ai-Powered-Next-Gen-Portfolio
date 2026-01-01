@@ -50,9 +50,8 @@ export function ProfileImage({
 
       {/* Hover Overlay */}
       <div
-        className={`absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center transition-opacity duration-300 ${
-          isHovered ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"
+          }`}
       >
         <div className="text-center space-y-3">
           {open ? (

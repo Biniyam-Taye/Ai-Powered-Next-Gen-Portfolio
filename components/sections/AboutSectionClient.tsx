@@ -108,7 +108,7 @@ export function AboutSectionClient({ profile }: AboutSectionClientProps) {
                     <motion.div
                         variants={itemVariants}
                         className={cn(
-                            "relative rounded-[3rem] overflow-hidden group/card",
+                            "relative rounded-[2rem] md:rounded-[3rem] overflow-hidden group/card",
                             // Light Mode Styles
                             "bg-gradient-to-br from-slate-50 via-white to-zinc-50 border-4 border-slate-200/80 shadow-2xl",
                             // Dark Mode Styles
@@ -128,14 +128,14 @@ export function AboutSectionClient({ profile }: AboutSectionClientProps) {
 
 
                         {/* Content Split */}
-                        <div className="relative z-10 flex flex-col lg:flex-row gap-8 p-8 md:p-12 lg:p-16">
+                        <div className="relative z-10 flex flex-col lg:flex-row gap-6 md:gap-8 p-5 md:p-12 lg:p-16">
 
                             {/* CARD 1: My Story Wrapper (Expands on Hover) */}
                             <motion.div
                                 whileHover="hover"
                                 initial="rest"
                                 animate="rest"
-                                className="lg:w-[65%] group/story relative rounded-[2.5rem] p-8 md:p-10 transition-all duration-500"
+                                className="lg:w-[65%] group/story relative rounded-[2rem] md:rounded-[2.5rem] p-5 md:p-10 transition-all duration-500"
                             >
                                 {/* Wrapper Background & Expansion Effect */}
                                 <motion.div
@@ -184,26 +184,26 @@ export function AboutSectionClient({ profile }: AboutSectionClientProps) {
                                 </div>
 
                                 {/* CARD 2: Content Inner Card (Grid Lines, No Expansion) */}
-                                <div className="relative bg-white dark:bg-zinc-950 rounded-[2rem] p-8 border-2 border-slate-100 dark:border-zinc-800 group-hover/story:border-blue-400/30 overflow-hidden transition-colors duration-500 shadow-sm z-10">
+                                <div className="relative bg-white dark:bg-zinc-950 rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-8 border-2 border-slate-100 dark:border-zinc-800 group-hover/story:border-blue-400/30 overflow-hidden transition-colors duration-500 shadow-sm z-10">
 
                                     {/* Tech Grid Pattern (Fades in BOLD on Wrapper Hover) */}
                                     <div className="absolute inset-0 opacity-0 group-hover/story:opacity-[0.15] transition-opacity duration-500 pointer-events-none"
                                         style={{ backgroundImage: 'linear-gradient(#3b82f6 2px, transparent 2px), linear-gradient(90deg, #3b82f6 2px, transparent 2px)', backgroundSize: '40px 40px' }} />
 
-                                    <div className="prose prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-zinc-400 leading-relaxed relative z-10">
+                                    <div className="prose prose-base md:prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-zinc-400 leading-relaxed relative z-10">
                                         {profile.fullBio && (
                                             <PortableText
                                                 value={profile.fullBio}
                                                 components={{
                                                     block: {
-                                                        normal: ({ children }) => <p className="mb-6 text-[1.05rem]">{children}</p>,
+                                                        normal: ({ children }) => <p className="mb-6 text-base md:text-[1.05rem]">{children}</p>,
                                                         h2: ({ children }) => <h4 className="inline-block px-3 py-1 bg-slate-100 dark:bg-zinc-900 rounded-lg text-sm font-bold text-slate-900 dark:text-slate-200 mt-6 mb-4 uppercase tracking-widest">{children}</h4>,
                                                     },
                                                     marks: {
                                                         strong: ({ children }) => (
                                                             <motion.span
-                                                                variants={{ hover: { scale: 1.1, backgroundColor: "rgba(59, 130, 246, 0.1)", borderColor: "rgba(59, 130, 246, 0.3)", color: "#2563eb" } }}
-                                                                className="inline-block px-1.5 py-0.5 mx-0.5 bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 rounded text-slate-900 dark:text-slate-200 font-bold text-[0.9em] align-baseline transition-colors"
+                                                                variants={{ hover: { backgroundColor: "rgba(59, 130, 246, 0.1)", borderColor: "rgba(59, 130, 246, 0.3)", color: "#2563eb" } }}
+                                                                className="inline box-decoration-clone px-1.5 py-0.5 mx-0.5 bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 rounded text-slate-900 dark:text-slate-200 font-bold text-[0.9em] align-baseline transition-colors leading-[1.8]"
                                                             >
                                                                 {children}
                                                             </motion.span>
